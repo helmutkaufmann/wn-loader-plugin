@@ -3,10 +3,12 @@ Making uploading and downloading of all sorts of documents easy.
 
 ## Installation
 Use composer to install
+
 ```
 composer require mercator/wn-loader-plugin
 php artisan winter:up
-``
+```
+
 ## Usage
 Place on a CMS or Static Pages page as *component* or *snippet* respectively. There are only a few parameters to 
 adjust for the time being:
