@@ -1,5 +1,6 @@
 # Mercator Loader
-Making uploading and downloading of all sorts of documents easy for [WinterCMS](https://wintercms.com).
+Making uploading and downloading of documents/images easy for [WinterCMS](https://wintercms.com): Just add
+a component/snippet to your page and specify where you want the upload to be stored. That's it.
 The "dropping part" on the client side is based on [Dropzone](https://www.dropzonejs.com).
 
 ## Installation
