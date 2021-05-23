@@ -14,7 +14,6 @@ php artisan winter:up
 Place on a CMS or Static Pages page as *component* or *snippet* respectively. There are only a few parameters to 
 adjust for the time being:
 - *Destination*: Path relative to the storage directory. If the path does not exist, it will be created upon upload.
-- *Anonymous*: Not yet used.
 - *Accepted Exentions*: Extensions (file types) allowed for upload. Format as comma-separated string, e.g. *.jpg,.jpeg,.doc,.docx*. 
 Note: When the string is left empty, no restrictions apply.
 - *Uplaod File Size Limit*: Maximum size per individual file (in megabytes). Larger files will not be uplaoded.
@@ -27,6 +26,8 @@ you would use the following:
 ```
 {% component 'Loader' destinationDirectory=("/app/media/myUploads") acceptedExtensions=".jpg,.jpeg,.webp,.gif,.pbm" uploadSizeLimit=10 options="resizeWidth:100, resizeHeight:100" %}
 ```
+## Future
+- Anonymous upload, i.e., uploaded files will be grouped by sessions
 
 ## Limitations
 The upload currently does not work for Apple's iOS devices. This is a known limitation/bug of the [Dropzone](https://www.dropzonejs.com) library.
