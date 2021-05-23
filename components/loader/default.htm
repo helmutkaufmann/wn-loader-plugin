@@ -1,0 +1,28 @@
+<!-- Dropzone -->
+<form action="{{ route('mercator.loader.upload') }}" class="dropzone" >
+	<div class="fallback">
+    	<input name="file" type="file" multiple />
+	</div>
+</form> 
+
+<!-- Script -->
+<script>
+
+Dropzone.autoDiscover = false;
+var myDropzone = new Dropzone(".dropzone",{ 
+	maxFilesize: {{__SELF__.property('uploadSizeLimit')}},
+	{% if not (__SELF__.property('acceptedExtensions') == "") %}
+	acceptedFiles: "{{ __SELF__.property('acceptedExtensions') }}",
+	{% endif %}
+	{{ __SELF__.property('options') }},
+	});
+	
+myDropzone.on("sending", function(file, xhr, formData) {
+   formData.append("_dest", "{{ __SELF__.encrypt(__SELF__.property('destinationDirectory'))}}");
+   formData.append("_ext", "{{  __SELF__.encrypt(__SELF__.property('acceptedExtensions'))}}");
+}); 
+
+
+</script>
+
+
